@@ -9,6 +9,8 @@
             </div>
             <div class="card-body">
                 <a href="{{ route('materiales.create') }}" type="button" class="btn btn-primary">Agregar material</a>
+
+
                 <table class="table table-striped table-hover">
                     <thead>
                         <th class="col-1 gap-1">Id </th>
@@ -20,7 +22,7 @@
                         <th class="col-1">Del</th>
                     </thead>
                     @if ($materiales->isEmpty())
-                        <span class="badge text-bg-danger">No existen registros en la tabla materiales </span>
+                        <p>No hay usuarios registrados.</p>
                     @else
                         @foreach ($materiales as $material)
                             <tr>
@@ -37,18 +39,28 @@
                                         class="btn btn-success">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('materiales.destroy', $material->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Del
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
                     @endif
 
                 </table>
-                {{ $materiales->links() }}
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="card-footer">
                 Derechos reservados
