@@ -5,10 +5,10 @@
 
         <div class="card">
             <div class="card-header">
-                <h1>Lista de materiales</h1>
+                <h1>Lista de asesores</h1>
             </div>
             <div class="card-body">
-                <a href="{{ route('materiales.create') }}" type="button" class="btn btn-primary">Agregar material</a>
+                <a href="{{ route('asesor.create') }}" type="button" class="btn btn-primary">Agregar material</a>
                 <table class="table table-striped table-hover">
                     <thead>
                         <th class="col-1 gap-1">Id </th>
@@ -19,25 +19,25 @@
                         <th class="col-1">Edit</th>
                         <th class="col-1">Del</th>
                     </thead>
-                    @if ($materiales->isEmpty())
-                        <span class="badge text-bg-danger">No existen registros en la tabla materiales </span>
+                    @if ($asesores->isEmpty())
+                        <span class="badge text-bg-danger">No existen registros en la tabla asesores </span>
                     @else
-                        @foreach ($materiales as $material)
+                        @foreach ($asesores as $asesor)
                             <tr>
-                                <td>{{ $material->id }}</td>
-                                <td>{{ $material->nombre }}</td>
-                                <td>{{ $material->descripcion }}</td>
-                                <td>{{ $material->tipo }}</td>
+                                <td>{{ $asesor->id }}</td>
+                                <td>{{ $asesor->nombre }}</td>
+                                <td>{{ $asesor->descripcion }}</td>
+                                <td>{{ $asesor->tipo }}</td>
                                 <td>
-                                    <a href="{{ route('materiales.show', $material->id) }}" type="button"
+                                    <a href="{{ route('asesores.show', $asesor->id) }}" type="button"
                                         class="btn btn-info">View</a>
                                 </td>
                                 <td>
-                                    <a href="{{ route('materiales.edit', $material->id) }}" type="button"
+                                    <a href="{{ route('asesores.edit', $asesor->id) }}" type="button"
                                         class="btn btn-success">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('materiales.destroy', $material->id) }}" method="POST">
+                                    <form action="{{ route('asesores.destroy', $asesor->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -50,7 +50,7 @@
                 </table>
 
                 <div class="d-flex justify-content-center">
-                    {{ $materiales->links() }}
+                    {{ $asesores->links() }}
                 </div>
 
             </div>

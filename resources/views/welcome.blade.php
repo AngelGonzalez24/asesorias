@@ -75,6 +75,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="menuDesplegable">
                                     <li><a class="dropdown-item" href="#">Contacto</a></li>
                                     <li><a class="dropdown-item" href="#">Acerca de</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('materiales.index') }}">Materiales</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -86,6 +87,12 @@
 
         </div>
     </header>
+
+   <main>
+    <div class="container">
+        <h1>Contenido</h1>
+    </div>
+   </main>
 </body>
 
 </html>
